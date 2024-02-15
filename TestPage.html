@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./TestCSS.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="site-mode-selector">Select site function: </label>
+    <select id="site-mode-selector">
+        <option value="embed" selected>Embed message in image</option>
+        <option value="decode">Decode message from image</option>
+    </select>
+
+    <canvas id="canvas" hidden>
+        Sorry, your browser doesn't support canvas technology.
+    </canvas>
+
+    <!-- <button id="test-button" onclick="alterImage()">Click me</button> -->
+
+    <!-- <button id="testb" onclick="testf()">testb</button> -->
+
+    <!-- <button id="encrypt-button" onclick="encryptButton()">Encrypt</button> -->
+
+    <!-- <button id="decrypt-button" onclick="decryptButton()">Decrypt</button> -->
+
+    <div class="content-container">
+        <div class="img-container">
+            <img id="display-image" src="" alt="">
+        </div>
+        <div class="main-content-container">
+            <p id="main-content-title">Embed Image</p>
+            <textarea id="input-message" class="embed-element" rows="18" placeholder="Message"></textarea>
+            <input id="input-key" placeholder="Key" type="password">
+            <div class="button-wrapper">
+                <button id="embed-button" class="embed-element" onclick="testConvertImage('embed')">Embed Message</button>
+                <button id="download-button" class="embed-element" onclick="downloadButton()">Save</button>
+            </div>
+            <textarea id="display-ciphertext" class="embed-element" readonly placeholder="Ciphertext"></textarea>
+            <textarea id="display-decrypted-message" class="decode-element" rows="18" readonly placeholder="Decrypted Message"></textarea>
+            <button id="decode-button" class="decode-element" onclick="testConvertImage('decode')">Decode Image</button>
+        </div>
+    </div>
+
+    <input 
+        id="image-picker"
+        type="file"
+        accept="image/*"
+    >
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <script src="./TestJS.js">
+        /*  
+        alert("I'm JavaScript!")
+        alert('Hello') 
+        */
+    </script>
+</body>
+</html>
